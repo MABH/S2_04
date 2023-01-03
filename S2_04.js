@@ -7,7 +7,7 @@ db.restaurants.find({}, {name:1, borough: "Bronx"}).pretty();
 db.restaurants.find({}, {name:1, borough: "Bronx"}).limit(5).pretty();
 db.restaurants.find({}, {name:1, borough: "Bronx"}).skip(5).limit(5).pretty();
 db.restaurants.find({"grades.score":{ $gt: 90 }}).pretty();
-db.restaurants.find({"grades.score":{ $gt: 80, $lt: 100 }}).pretty(); db.restaurants.find({$and: [ {"grades.score":{ $gt: 80}}, {"grades.score":{$lt: 100 }}]}).pretty();
+db.restaurants.find({"grades.score":{ $gt: 80, $lt: 100 }}).pretty(); 
 db.restaurants.find({"address.coord":{$lt:[-95.754168,0]}}).pretty();
 db.restaurants.find({$and: [{"cuisine": {$ne:"American "}},{"address.coord":{$lt:[-65.754168,0]}},{"grades.score":{ $gt: 70}}]}).pretty();
 db.restaurants.find({"cuisine": {$ne:"American "},"address.coord":{$lt:[-65.754168,0]},"grades.score":{ $gt: 70}}).pretty();
